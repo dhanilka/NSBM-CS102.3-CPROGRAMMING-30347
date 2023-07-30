@@ -1,0 +1,521 @@
+                               Practical 03
+
+01. 
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Enter the first number: ");
+    scanf("%d", &num1);
+    printf("Enter the second number: ");
+    scanf("%d", &num2);
+
+    if (num1 > num2) {
+        printf("The highest number is: %d\n", num1);
+    } else {
+        printf("The highest number is: %d\n", num2);
+    }
+
+    return 0;
+}
+
+
+
+
+02.
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2, num3, max, min;
+
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &num1, &num2, &num3);
+
+    max = num1; // Assume the first number is the largest
+    min = num1; // Assume the first number is the smallest
+
+    // Check if the second number is larger than the current max
+    if (num2 > max) {
+        max = num2;
+    }
+
+    // Check if the third number is larger than the current max
+    if (num3 > max) {
+        max = num3;
+    }
+
+    // Check if the second number is smaller than the current min
+    if (num2 < min) {
+        min = num2;
+    }
+
+    // Check if the third number is smaller than the current min
+    if (num3 < min) {
+        min = num3;
+    }
+
+    printf("Largest value: %d\n", max);
+    printf("Smallest value: %d\n", min);
+
+    return 0;
+}
+
+
+03.
+#include <stdio.h>
+
+int main() {
+    char employeeName[50];
+    double basicSalary, newSalary, increment;
+
+    printf("Enter employee name: ");
+    scanf("%s", employeeName);
+
+    printf("Enter basic salary: ");
+    scanf("%lf", &basicSalary);
+
+    if (basicSalary < 5000) {
+        increment = 0.05 * basicSalary;
+    } else if (basicSalary >= 5000 && basicSalary < 10000) {
+        increment = 0.10 * basicSalary;
+    } else {
+        increment = 0.15 * basicSalary;
+    }
+
+    newSalary = basicSalary + increment;
+
+    printf("Employee Name: %s\n", employeeName);
+    printf("New Salary: %.2lf\n", newSalary);
+
+    return 0;
+}
+
+04.
+
+#include <stdio.h>
+
+int main() {
+    float radius;
+    float diameter, circumference, area;
+
+    printf("Enter the radius of the circle: ");
+    scanf("%f", &radius);
+
+    diameter = 2 * radius;
+    circumference = 2 * 3.14159 * radius;
+    area = 3.14159 * radius * radius;
+
+    printf("Diameter: %f\n", diameter);
+    printf("Circumference: %f\n", circumference);
+    printf("Area: %f\n", area);
+
+    return 0;
+}
+
+
+
+05.
+
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two integers: ");
+    scanf("%d%d", &num1, &num2);
+
+    if (num1 % num2 == 0) {
+        printf("%d is a multiple of %d\n", num1, num2);
+    } else {
+        printf("%d is not a multiple of %d\n", num1, num2);
+    }
+
+    return 0;
+}
+
+06.
+
+#include <stdio.h>
+
+int main() {
+    printf("A = %d\n", 'A');
+    printf("B = %d\n", 'B');
+    printf("C = %d\n", 'C');
+    printf("a = %d\n", 'a');
+    printf("b = %d\n", 'b');
+    printf("c = %d\n", 'c');
+    printf("0 = %d\n", '0');
+    printf("1 = %d\n", '1');
+    printf("2 = %d\n", '2');
+    printf("$ = %d\n", '$');
+    printf("* = %d\n", '*');
+    printf("+ = %d\n", '+');
+    printf("/ = %d\n", '/');
+    printf("blank character = %d\n", ' ');
+
+    return 0;
+}
+
+
+07.
+
+#include <stdio.h>
+
+int main() {
+    float basicSalary, additionalAllowance = 0, bonusPercentage = 0, monthlySales, bonus = 0, grossRemuneration;
+
+    printf("Enter the basic salary: ");
+    scanf("%f", &basicSalary);
+
+    printf("Enter the monthly sales: ");
+    scanf("%f", &monthlySales);
+
+    if (monthlySales >= 0 && monthlySales <= 25000) {
+        bonusPercentage = 10;
+    } else if (monthlySales > 25000 && monthlySales <= 50000) {
+        bonusPercentage = 12;
+    } else if (monthlySales > 50000) {
+        bonusPercentage = 15;
+    }
+
+    printf("Is the salesman working in Colombo? (Y/N): ");
+    char location;
+    scanf(" %c", &location);
+
+    if (location == 'Y' || location == 'y') {
+        additionalAllowance = 2500;
+    }
+
+    printf("Enter the number of years of service: ");
+    int yearsOfService;
+    scanf("%d", &yearsOfService);
+
+    if (yearsOfService > 5) {
+        additionalAllowance += 0.1 * basicSalary;
+    }
+
+    bonus = (bonusPercentage / 100) * monthlySales;
+    grossRemuneration = basicSalary + additionalAllowance + bonus;
+
+    printf("Gross monthly remuneration: %.2f\n", grossRemuneration);
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                       Practical 04
+
+
+
+
+
+01.Use If-Else and write a program that reads an integer and determines and prints if the number is even or odd. (i.e. divisible by 2)
+#include <stdio.h>
+int main()
+{
+int number;
+printf("Enter an integer: ");
+scanf("%d", &number);
+if (number % 2 == 0)
+{
+printf("%d is even.\n", number);
+}
+Else
+{
+printf("%d is odd.\n", number);
+}
+return 0;
+}
+Re-write the above program using a switch statement instead of an If-Else statement!
+#include <stdio.h>
+int main()
+{
+int number;
+printf("Enter an integer: ");
+scanf("%d", &number);
+switch (number % 2)
+{
+case 0:
+printf("%d is even.\n", number);
+break;
+case 1:
+printf("%d is odd.\n", number);
+break;
+}
+return 0;
+}
+
+
+02.Write a simple menu driven calculator to perform (+ - / *) operations. (The program must display a menu to select the desired operator.)
+#include <stdio.h>
+int main()
+{
+int choice;
+float num1, num2, result;
+printf("Menu:\n");
+printf("1. Addition\n"); printf("2. Subtraction\n"); printf("3. Multiplication\n"); printf("4. Division\n"); printf("Enter your choice (1-4): "); scanf("%d", &choice);
+printf("Enter two numbers: ");
+scanf("%f %f", &num1, &num2);
+switch (choice)
+{
+case 1:
+result = num1 + num2;
+printf("Result: %.2f\n", result);
+break;
+case 2:
+result = num1 - num2;
+printf("Result: %.2f\n", result);
+break;
+case 3:
+result = num1 * num2;
+printf("Result: %.2f\n", result);
+break;
+case 4:
+if (num2 != 0)
+{
+result = num1 / num2;
+printf("Result: %.2f\n", result);
+}
+Else
+{
+printf("Error: Division by zero is not allowed.\n");
+}
+break;
+default:
+printf("Invalid choice.\n");
+}
+}
+
+03.Create a text-based, menu-driven program that allows the user to choose whether to calculate the circumference of a circle, the area of a circle or the volume of a sphere. The program should then input a radius from the user, perform the appropriate calculation and display the result.
+#include <stdio.h>
+#define PI 3.14159
+int main()
+{
+int choice;
+float radius, result;
+printf("Menu:\n");
+printf("1. Calculate Circumference of a Circle\n");
+printf("2. Calculate Area of a Circle\n");
+printf("3. Calculate Volume of a Sphere\n");
+printf("Enter your choice (1-3): ");
+scanf("%d", &choice);
+printf("Enter the radius: ");
+scanf("%f", &radius);
+switch (choice)
+{
+case 1:
+result = 2 * PI * radius;
+printf("Circumference: %.2f\n", result);
+break;
+case 2:
+result = PI * radius * radius;
+printf("Area: %.2f\n", result);
+break;
+case 3:
+result = (4.0 / 3.0) * PI * radius * radius * radius;
+printf("Volume: %.2f\n", result);
+break;
+default:
+printf("Invalid choice.\n");
+}
+return 0;
+}
+
+
+04.Write a C program to read a character from the user and determine whether the given letter is vowel or not. (Use a switch statement which also includes ‘default’ state).
+#include <stdio.h>
+int main()
+{
+char vowal;
+printf("Enter a character: ");
+scanf("%c", &vowal);
+switch (vowal)
+{
+case 'a':
+printf("vowel\n");break; case 'e':
+printf("vowel\n");break; case 'i':
+printf("vowel\n");break; case 'o':
+printf("vowel\n");break; case 'u':
+printf("vowel\n");break; default:
+printf("not a vowel!\n");break;
+}
+}
+
+
+05.Write a C program to enter month number and print total number of days in month using switch case. First assume that the given month belongs to a non-leap year.
+#include <stdio.h>
+int main()
+{
+int month;
+printf("Enter the month number (1-12): ");
+scanf("%d", &month);
+switch (month) { case 1:
+printf("January has 31 days.\n");break; case 2:
+printf("February has 28 days.\n");break; case 3:
+printf("March has 31 days.\n");break; case 4:
+printf("April has 30 days.\n");break; case 5:
+printf("May has 31 days.\n");break; case 6:
+printf("June has 30 days.\n");break; case 7:
+printf("July has 31 days.\n");break; case 8:
+printf("August has 31 days.\n");break; case 9:
+printf("September has 30 days.\n");break; case 10:
+printf("October has 31 days.\n");break; case 11:
+printf("November has 30 days.\n");break; case 12:
+printf("December has 31 days.\n");break; default:
+printf("Invalid month number.\n");break;
+}
+return 0;
+}
+
+
+
+                                     Practical 05
+
+
+01. Write a C program to print numbers from 0 to 100. (You are required to write 3 separate answers each using While, Do..While, For, looping structures)
+• While
+#include <stdio.h>
+int main()
+{
+int number = 0;
+while (number <= 100)
+{
+printf("%d ", number);
+number++;
+}
+return 0;
+}
+• Do while
+#include <stdio.h>
+int main()
+{
+int number = 0;
+do
+{
+printf("%d ", number);
+number++;
+}
+while (number <= 100);
+return 0;
+}
+• For
+#include <stdio.h>
+int main()
+{
+for (int number = 0; number <= 100; number++)
+{
+printf("%d ", number);
+}
+return 0;
+}
+
+
+02. Write a C program to calculate and print the total of 10 marks and the average. If the average is less than 50 program should print “Fail!” otherwise “Pass!”
+#include <stdio.h>
+int main()
+{
+int marks[10];
+int total = 0;
+printf("Enter 10 marks:\n");
+for (int i = 0; i < 10; i++) {
+scanf("%d", &marks[i]);
+total += marks[i];
+}
+float average = (float)total / 10;
+printf("Total: %d\n", total);
+printf("Average: %.2f\n", average);
+if (average < 50) {
+printf("Fail!\n");
+}
+Else
+{
+printf("Pass!\n");
+}
+return 0;
+}
+
+
+03.
+Write a C program to calculate factorial of a user given number.
+Hint:
+o Select an appropriate looping structure.
+o Factorial of ‘0’ is ‘1’ (0! = 1)
+o Ex: factorial of number 5 is calculated as 5! = 5*4*3*2*1
+#include <stdio.h>
+int main()
+{
+int number;
+int factorial = 1;
+printf("Enter a number: ");
+scanf("%d", &number);
+if (number < 0) {
+printf("Factorial is not defined for negative numbers.\n");
+}
+Else
+{ for (int i = 1; i <= number; i++)
+{
+factorial *= i;
+}
+printf("Factorial of %d is %d\n", number, factorial);
+4.
+}
+return 0;
+}
+
+
+04.Write a C program to calculate the sum of all digits of a user given number. If user input 123 your program should output 6. (calculated as 1+2+3)
+#include <stdio.h>
+int main()
+{
+int number, sum = 0;
+printf("Enter a number: ");
+scanf("%d", &number);
+int remainder;
+while (number > 0)
+{
+remainder = number % 10;
+sum += remainder;
+number
+/= 10;
+}
+printf("Sum of digits: %d\n", sum);
+5.
+return 0;
+}
+
+
+05.Write a C program to reverse the digits of a number using do-while statement.
+#include <stdio.h>
+int main()
+{
+int number, reversedNumber = 0, remainder;
+printf("Enter a number: ");
+scanf("%d", &number);
+do {
+remainder = number % 10;
+reversedNumber = reversedNumber * 10 + remainder;
+number = number / 10;
+} while (number != 0);
+printf("Reversed number: %d\n", reversedNumber);
+return 0;
+}
+
+
+
+
