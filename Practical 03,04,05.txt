@@ -1,7 +1,7 @@
                                Practical 03
 
 01. 
-
+ 
 #include <stdio.h>
 
 int main() {
